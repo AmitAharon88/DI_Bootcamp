@@ -1,0 +1,114 @@
+* {
+  font-family: "inter";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: -15px;
+  position: relative;
+}
+
+li {
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  padding-right: 25px;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#avengers {
+  position: absolute;
+  left: 2%;
+  height: 50px;
+  width: 50px;
+}
+nav {
+  text-align: right;
+  background-color: black;
+  display: default;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+#return {
+  background-image: url("Thor.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#name {
+  font-size: 90px;
+  font-weight: bolder;
+  margin-top: 20%;
+  margin-left: 5%;
+  margin-bottom: 50px;
+}
+
+#heroText {
+  text-size-adjust: auto;
+  margin-left: 5%;
+  font-size: 20px;
+  width: 40%;
+  color: black;
+  margin-top: -2%;
+  margin-bottom: 10px;
+}
+
+#moreInfo {
+  font-size: 20px;
+  margin-left: 5%;
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: right;
+}
+
+@media screen and (orientation: landscape) and (min-width: 768px) {
+  name {
+    font-size: 25px;
+  }
+
+  nav {
+    background-color: lightgreen;
+    color: black;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-width: 600px) {
+  name {
+    font-size: 35px;
+  }
+
+  nav {
+    background-color: yellow;
+    color: black;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  nav {
+    background-color: red;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  nav {
+    background-color: black;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #hero {
+    display: inline-block;
+  }
+}
