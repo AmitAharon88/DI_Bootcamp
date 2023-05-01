@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <section id="container">
+      <section id="leftSide">
+        <h1>Log In</h1>
+        <div id="formText">
+          <input
+            class="text"
+            type="email"
+            name="email"
+            required
+            placeholder="email"
+          /><br />
+          <input
+            class="text"
+            type="password"
+            name="password"
+            required
+            placeholder="password"
+            minlength="8"
+          />
+        </div>
+        <div id="checkbox">
+          <label for="remember">Remember me</label
+          ><input type="checkbox" name="remember me" id="remember" />
+          <a id="forget" href="#">Forgot Password?</a><br />
+        </div>
+        <input id="login" type="submit" value="Log In" />
+        <div id="connectbox">
+          <div id="line1"></div>
+          <p id="connect">Or Connect with</p>
+          <div id="line2"></div>
+        </div>
+        <div>
+          <img class="socialMedia" src="facebook.png" alt="facebook icon" />
+          <img class="socialMedia" src="twitter.png" alt="twitter icon" />
+          <img class="socialMedia" src="github.png" alt="github icon" />
+          <img class="socialMedia" src="linkedin.png" alt="linkedin icon" />
+        </div>
+        <div id="copyright">
+          <p><span>&#169;</span> 2020</p>
+        </div>
+      </section>
+      <section id="rightSide">
+        <div id="register">
+          <div id="regcard">
+            <img id="signinIcon" src="user-plus-solid.svg" alt="Sign in icon" />
+            <p id="hello">Hello, friend!</p>
+            <p id="hello2">
+              Enter your personal details and start your journey with us
+            </p>
+            <button>
+              Register
+              <i id="icon2" class="fa-solid fa-right-to-bracket"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

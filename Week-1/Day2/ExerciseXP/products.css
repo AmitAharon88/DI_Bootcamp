@@ -1,0 +1,67 @@
+.item {
+  display: inline-block;
+  position: relative;
+  border: 3px solid black;
+  width: 250px;
+}
+
+.circlenew {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  background-color: green;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.new {
+  position: absolute;
+  top: 9px;
+  left: 22px;
+  color: white;
+}
+
+.circlediscout {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background-color: red;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.discout {
+  position: absolute;
+  top: 9px;
+  right: 22px;
+  color: white;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: auto;
+}
+
+p {
+  text-align: center;
+}
+
+.price {
+  color: green;
+}
+.crossout {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: grey;
+}
+
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}

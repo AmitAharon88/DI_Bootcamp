@@ -1,0 +1,155 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#container {
+  position: relative;
+}
+
+#leftSide,
+#rightSide {
+  display: inline-block;
+  height: 400px;
+  width: 49%;
+  text-align: center;
+}
+
+#leftSide {
+  position: absolute;
+  left: 0;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 50px 0 5px 0;
+}
+
+.text,
+#login {
+  background-color: #d3d3d3;
+  margin-bottom: 10px;
+  padding: 7px;
+  /* width: 85%; */
+  width: 40vw;
+  border: none;
+}
+
+.text {
+  background-color: #d3d3d3;
+}
+
+#checkbox {
+  position: relative;
+}
+
+#remember {
+  position: absolute;
+  left: 14px;
+}
+
+label {
+  position: absolute;
+  top: 3px;
+  left: 35px;
+  font-size: 12px;
+}
+
+#forget {
+  position: absolute;
+  right: 20px;
+  color: black;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+#login {
+  background-color: #a66fa6;
+  color: white;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#connectbox {
+  position: relative;
+}
+#connect {
+  font-size: 12px;
+}
+
+#line1,
+#line2 {
+  position: absolute;
+  border: 0.5px solid black;
+  width: 65px;
+}
+
+#line1 {
+  right: 25px;
+  top: 8px;
+}
+
+#line2 {
+  left: 25px;
+  top: 8px;
+}
+.socialMedia {
+  margin: 6px;
+  height: 20px;
+  width: auto;
+}
+
+#copyright {
+  font-size: 10px;
+}
+
+#rightSide {
+  position: absolute;
+  right: 0;
+  background-image: linear-gradient(#370037, #a66fa6);
+  color: white;
+}
+
+#register {
+  position: relative;
+}
+
+#regcard {
+  position: relative;
+  border: 3px solid black;
+}
+#signinIcon {
+  position: absolute;
+  top: 110px;
+  left: 40%;
+  height: 70px;
+  width: auto;
+}
+
+#hello {
+  position: absolute;
+  top: 155px;
+  left: 70px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#hello2 {
+  position: absolute;
+  top: 205px;
+  text-align: center;
+}
+
+button {
+  position: absolute;
+  top: 265px;
+  left: 32%;
+  background-color: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin-top: 5px;
+  padding: 10px 20px;
+}

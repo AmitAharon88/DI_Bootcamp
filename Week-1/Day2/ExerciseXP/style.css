@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: black;
+  position: relative;
+  height: 40px;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  font-size: 10px;
+}
+
+#crown {
+  color: #ffffff;
+  height: 4vh;
+  width: 4vw;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
