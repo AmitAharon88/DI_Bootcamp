@@ -1,0 +1,30 @@
+#gridContainer1 {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  border: 1px solid black;
+  height: 80%;
+  width: 80%;
+  gap: 3vh 1vw;
+}
+
+.orange,
+.lightOrange,
+.darkOrange {
+  height: 2em;
+  width: 2em;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.orange {
+  background-color: rgb(255, 98, 0);
+}
+
+.lightOrange {
+  background-color: rgb(240, 163, 114);
+}
+
+.darkOrange {
+  background-color: rgb(150, 58, 1);
+}

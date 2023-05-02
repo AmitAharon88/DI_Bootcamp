@@ -1,0 +1,41 @@
+/* Secong grid */
+
+#gridontainer2 {
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  /* height: 400px;
+  width: 400px; */
+  border: 1px solid black;
+}
+
+.lightGrey,
+.grey,
+.darkGrey,
+.black {
+  height: 3em;
+  width: 3em;
+  margin: 0.3em;
+}
+
+.lightGrey {
+  background-color: lightgray;
+}
+
+.grey {
+  background-color: gray;
+}
+
+.darkGrey {
+  background-color: rgb(88, 86, 86);
+}
+
+.black {
+  background-color: black;
+}
+
+.lightGreySection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
