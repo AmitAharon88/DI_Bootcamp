@@ -13,15 +13,15 @@
   text-align: center;
 }
 
-#leftSide {
+/* #leftSide {
   position: absolute;
   left: 0;
-}
+} */
 
 h1 {
   font-size: 30px;
   font-weight: bold;
-  margin: 50px 0 5px 0;
+  margin: 50px auto 20px auto;
 }
 
 .text,
@@ -104,8 +104,9 @@ label {
 }
 
 #rightSide {
-  position: absolute;
-  right: 0;
+  /* position: absolute;
+  right: 0; */
+  display: inline-block;
   background-image: linear-gradient(#370037, #a66fa6);
   color: white;
 }
@@ -116,34 +117,34 @@ label {
 
 #regcard {
   position: relative;
-  border: 3px solid black;
+  border: 3px solid red;
 }
 #signinIcon {
-  position: absolute;
+  /* position: absolute;
   top: 110px;
-  left: 40%;
+  left: 40%; */
   height: 70px;
   width: auto;
 }
 
 #hello {
-  position: absolute;
+  /* position: absolute;
   top: 155px;
-  left: 70px;
+  left: 70px; */
   font-size: 30px;
   font-weight: bold;
 }
 
 #hello2 {
-  position: absolute;
-  top: 205px;
+  /* position: absolute;
+  top: 205px; */
   text-align: center;
 }
 
 button {
-  position: absolute;
+  /* position: absolute;
   top: 265px;
-  left: 32%;
+  left: 32%; */
   background-color: transparent;
   font-weight: bold;
   text-transform: uppercase;
