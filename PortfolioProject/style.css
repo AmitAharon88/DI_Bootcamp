@@ -1,0 +1,72 @@
+/* WEBPAGE FONT */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+
+/* NAV BAR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+
+nav {
+  display: flex;
+  /* height: 50px; */
+  background-color: black;
+  padding: 10px;
+}
+
+nav > ul {
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+  align-items: center;
+  width: 100%;
+  margin-right: 20px;
+  margin-right: 20px;
+}
+#navImg {
+  height: 50px;
+  width: auto;
+  margin-right: 3rem;
+  margin-left: 1rem;
+}
+
+.navLink {
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 20px;
+}
+
+#searchBar {
+  width: 100%;
+  text-align: right;
+  border-radius: 8px;
+  padding-right: 1rem;
+}
+
+.searchBarContent {
+  font-size: 20px;
+}
+
+/* HERO */
+#hero {
+  border: 1px solid blue;
+  background-image: url(coding-g7d408e68b_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+#heroText {
+  text-align: center;
+  font-size: 4em;
+  padding-top: 15vh;
+  font-weight: bolder;
+}
+
+/* ABOUT */
+#about {
+  background-image: linear-gradient(to right, black, #12166d, #370037);
+}
