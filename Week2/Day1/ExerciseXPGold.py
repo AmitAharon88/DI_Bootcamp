@@ -3,7 +3,7 @@
 a = 'Hello World'
 b = 'I love python'
 
-print(f'{a} {a} {a} {a} {b} {b} {b} {b}')
+print(f'{a} \n{a} \n{a} \n{b} \n{b} \n{b} \n{b}')
 
 
 
