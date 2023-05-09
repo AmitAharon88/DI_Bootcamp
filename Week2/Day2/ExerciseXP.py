@@ -87,6 +87,8 @@ for num in numbers :
 # 🌟 Exercise 6 : While loops
 
 name = ''
+name = input('What is your name?')
+
 while name != 'Amit' :
     name = input('What is your name?')
 
@@ -122,7 +124,7 @@ while True :
     if toppings != 'quit' :
             print(f'We gave added {toppings} to your pizza')
             topping_list.append(toppings)
-            print(toppings)
+            toppings = input('What topping would you like? If you would not like any please enter \'quit\': ')
     else :
         break
     
