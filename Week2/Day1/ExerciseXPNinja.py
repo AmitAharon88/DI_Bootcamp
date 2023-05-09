@@ -23,14 +23,13 @@ print(len(my_text))
 
 # Exercise 5
 substring = 'a'
+long_sentence = input('Please input the longest sentence you can without using the letter A:')
 
 while True :
-    long_sentence = input('Please input the longest sentence you can without using the letter A:')
-
-    if long_sentence.find(substring) :
+    if substring in long_sentence :
         print('Try again')
-    
+        long_sentence = input('Please input the longest sentence you can without using the letter A:')
     else :
         print('Congrats! You created your longest sentence yet!')
-
+        break
         
