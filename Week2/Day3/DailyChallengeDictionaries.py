@@ -24,7 +24,6 @@ for item, cost in store_items.items():
     if float(cost) <= wallet:     #item cost is <= to money i have
         affordable_items.append(item)   #places the clothing item in the basket
         wallet = wallet - float(cost)
-        print(wallet)
 
 if len(affordable_items) > 0:
     affordable_items.sort()
