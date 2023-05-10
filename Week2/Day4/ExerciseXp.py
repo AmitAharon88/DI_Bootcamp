@@ -58,11 +58,10 @@ show_magicians()
 
 
 magician_names = show_magicians()
-def make_great(great_names) :
-    for great_magician in great_names :
-        # great_magician = magician_names.insert(0, 'The Great')
-        great_magician = 'The Great ' + great_magician
-        print(great_magician)
+def make_great(magician_names) :
+    for i in range(len(magician_names)) :
+        great_names = 'The Great ' + magician_names[i]
+        print(great_names)
         
 make_great(magician_names)
 
