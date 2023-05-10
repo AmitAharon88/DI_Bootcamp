@@ -1,12 +1,14 @@
 # Exercise 1
 word = input('Give me a word: ')
-index_dict = {}
+word_dict = {}
 
-for i, char in enumerate(word) :
-    index_dict[char] = []
-    print(index_dict)
-    index_dict[char].append(i)
-    print(index_dict)
+for position, letter in enumerate(word) :
+    if letter in word_dict :
+        word_dict[letter].append(position)
+    else :
+         word_dict[letter] = [position]
+
+print(word_dict)
 
 # Exercise 2
 
