@@ -1,29 +1,22 @@
 # 🌟 Exercise 1 : Set
 #1
-my_fav_numbers = [1,2,4,8,16]
+my_fav_numbers = {1,2,4,8,16}
 
 #2
-my_fav_numbers.append(88)
-my_fav_numbers.append(19)
+my_fav_numbers.update([88, 19])
 print(my_fav_numbers)
 
 #3
-my_fav_numbers.remove(my_fav_numbers[-1])
+my_fav_numbers.remove(19) #if were working with sets you can't remove the last number as there is no order.
 print(my_fav_numbers)
 
 #4
-friend_fav_numbers = [1,2,5,8,10]
+friend_fav_numbers = {1,2,5,8,10}
 
 #5
-our_fav_numbers = my_fav_numbers + friend_fav_numbers
+our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)  #this will join the lists but prevent duplicates
 print(our_fav_numbers)
 
-#remove duplicates
-in_my_fav_numbers = set(my_fav_numbers)
-in_friend_fav_numbers = set(friend_fav_numbers)
-in_friends_but_not_in_mine = in_friend_fav_numbers - in_my_fav_numbers
-result = my_fav_numbers + list(in_friends_but_not_in_mine)
-print(result)
 
 # 🌟 Exercise 2 : Tuple
 # No a tuple cannot be modified
@@ -37,6 +30,7 @@ print(basket)
 
 #2
 basket.remove('Blueberries')
+# or use basket.pop()
 
 print(basket)
 
@@ -69,7 +63,15 @@ print(basket)
 
 #3
 list = range(3, 11)
+#this creates a list with a range of numbers from the 3rd index to the 11th index
 number = [x /2 for x in list]
+# number is equal to half of the value of the index
+# example:
+# index 3 /2 = 1.5
+# index 4 /2 = 2
+# index 5 /2 = 2.5
+# This continues to index 11 /2 = 5.5
+
 print(number)
 
 
@@ -109,9 +111,8 @@ new_fruit = input('name a fruit: ')
 for fruit in list_fruits :
     if new_fruit == fruit :
         print('You chose one of your favorite fruits! Enjoy!')
-        break
-else :
-    print('You chose a new fruit. I hope you enjoy')
+    else :
+        print('You chose a new fruit. I hope you enjoy')
     
 
 # 🌟 Exercise 8 : Who ordered a pizza?
