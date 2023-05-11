@@ -108,16 +108,16 @@ print(list_fruits)
 #3
 new_fruit = input('name a fruit: ')
 
-for fruit in list_fruits :
-    if new_fruit == fruit :
-        print('You chose one of your favorite fruits! Enjoy!')
-    else :
-        print('You chose a new fruit. I hope you enjoy')
+# for fruit in list_fruits :
+if new_fruit in list_fruits :
+    print('You chose one of your favorite fruits! Enjoy!')
+else :
+    print('You chose a new fruit. I hope you enjoy')
     
 
 # 🌟 Exercise 8 : Who ordered a pizza?
 
-
+#ORIGINAL
 topping_list = []
 
 while True :
@@ -134,6 +134,22 @@ if topping_list:
     print(f'Your pizza will contain the following toppings: {topping_list}. Your total comes out to ${price}')
 else :
     print('goodbye')
+
+#NEW ATTEMPT
+
+# topping_list = []
+
+# while True :
+#     toppings = input('What topping would you like? If you would not like any please enter \'quit\': ')
+#     if toppings == 'quit' :
+#         print('goodbye')
+#     else :
+#         print(f'We gave added {toppings} to your pizza')
+#         topping_list.append(toppings)
+#         toppings = input('What topping would you like? If you would not like any please enter \'quit\': ')
+    
+#     price = float(10 + (len(topping_list) * 2.5))
+#     print(f'Your pizza will contain the following toppings: {topping_list}. Your total comes out to ${price}')
 
 # 🌟 Exercise 9 : Cinemax
 
