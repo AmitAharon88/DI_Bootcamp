@@ -137,19 +137,17 @@ else :
 
 #NEW ATTEMPT
 
-# topping_list = []
+topping_list = []
+toppings = input('What topping would you like? If you would not like any, please enter \'quit\': ')
 
-# while True :
-#     toppings = input('What topping would you like? If you would not like any please enter \'quit\': ')
-#     if toppings == 'quit' :
-#         print('goodbye')
-#     else :
-#         print(f'We gave added {toppings} to your pizza')
-#         topping_list.append(toppings)
-#         toppings = input('What topping would you like? If you would not like any please enter \'quit\': ')
-    
-#     price = float(10 + (len(topping_list) * 2.5))
-#     print(f'Your pizza will contain the following toppings: {topping_list}. Your total comes out to ${price}')
+while toppings != 'quit':
+    print(f'We have added {toppings} to your pizza')
+    topping_list.append(toppings)
+    toppings = input('What topping would you like? If you would not like any, please enter \'quit\': ')
+
+price = float(10 + (len(topping_list) * 2.5))
+print(f'Your pizza will contain the following toppings: {topping_list}. Your total comes out to ${price}')
+
 
 # 🌟 Exercise 9 : Cinemax
 
