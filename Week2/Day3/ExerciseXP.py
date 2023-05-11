@@ -1,4 +1,4 @@
-# # Exercise 1
+# Exercise 1
 
 keys = ['Ten', 'Twenty', 'Thirty']
 values = [10, 20, 30]
@@ -7,7 +7,7 @@ new_dict = dict(zip(keys, values))
 
 print(new_dict)
 
-# # Exercise 2
+# Exercise 2
 
 family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
 
