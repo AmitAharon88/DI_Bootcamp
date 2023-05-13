@@ -47,7 +47,7 @@ else :
 
 
 # Start playing
-for num in range(1, 9) :
+for num in range(1, 10) :
     print(f'Round number {num}:')
     if num % 2 !=0 and check_win()==False :
         print('Player 1, its your turn...')
