@@ -86,17 +86,18 @@ class Zoo :
     def sort_animal(self) :
         sorted_animals = sorted(self.animal)
         print(sorted_animals)
-        
+
+# Can't figure our #6 in exercise 4 
     def group_animals(self) :
         sorted_animals = sorted(self.animal)
-        new_group = []
-        groups = {
-        }
-        for i, animal in enumerate(sorted_animals) :
-            new_group.append(animal)
-            if sorted_animals[i+1] == new_group[0][0] :
-                new_group.append(sorted_animals)
-        print(new_group)
+        groups = {}
+        for animal in groups.values() :
+            animal_first_letter = animal[0].upper()
+            if animal_first_letter in sorted_animals :
+                groups[animal_first_letter].append(animal)
+            else :
+                groups[animal_first_letter] = animal
+        print(groups)
          
     
 zoo1 = Zoo('Bronx zoo')
