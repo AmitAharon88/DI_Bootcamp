@@ -50,13 +50,12 @@ class Currency:
     def __iadd__(self, other) :
         if isinstance (other, int) :
             self.amount += other
-            return f'{self.amount} {self.currency}'
         elif isinstance (other, Currency) and self.currency == other.currency :
             self.amount += other.amount
-            return f'{self.amount} {self.currency}'
         else :
-            raise TypeError(f"Cannot add between Currency type <{self.currency}> and <{other.currency}>")
-       
+            raise TypeError(f"Cannot add between Currency type {self.currency} and {other.currency}")
+    
+        return self
        
 c1 = Currency('dollar', 5)
 c2 = Currency('dollar', 10)

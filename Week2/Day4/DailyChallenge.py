@@ -21,9 +21,6 @@ for num in range(num_col) :
         letter = row[num]
         if letter.isalpha() :
             decoded_str += letter
-        else :
-            if decoded_str :
-                decoded_str += ''
     decoded_matrix.append(decoded_str)
 decoded_message = ' '.join(decoded_matrix)
 

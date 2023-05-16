@@ -35,24 +35,37 @@
 # print(add(1,2,3,4))
 
 # 5
-def max (numbers) :
-    max_num = numbers[0]
-    for num in numbers:
-        if num > max_num :
-            max_num = num
-    return max_num
+# def max (numbers) :
+#     max_num = numbers[0]
+#     for num in numbers:
+#         if num > max_num :
+#             max_num = num
+#     return max_num
     
-print(max([1,2,3]))
+# print(max([1,2,3]))
 
 
-# 6
+# # 6
 
-def factorial(number) :
-    fac_list = []
-    for num in range(1, number+1) :
-        fac_list.append(num)
-    return fac_list
+# def factorial(number) :
+#     fac_list = []
+#     for num in range(1, number+1) :
+#         fac_list.append(num)
+#     return fac_list
 
-print(factorial(10))
+# print(factorial(10))
+
+#7
+# your_string = input('Give me a list of word seperated with a space: ')
+# def count (your_list) :
+#     your_list = your_string.split(' ')
+#     print(len(your_list))
+    
+# count(your_string)
+    
+# 8
+    
+
+
 
     
