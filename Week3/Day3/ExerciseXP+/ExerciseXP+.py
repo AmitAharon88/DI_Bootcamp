@@ -113,8 +113,7 @@ age_on_planets(1000000000)
 
 # Exercise 9 : Faker Module
 
-pip install Faker
-import Faker
+from fake import Faker
 
 user_list = []
 def populate_users() :
