@@ -26,6 +26,7 @@ class Pagination :
     
     def nextPage(self) :
         sublist = self.createPages()
+        visiblePage = self.getVisibleItems()
         nextPage_index = sublist.index(visiblePage) - 1
         print(sublist[self.pageNum+1])
     
