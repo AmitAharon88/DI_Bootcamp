@@ -75,15 +75,14 @@ sentence.frequency('book')
 sentence.common_words()
 sentence.unique_words()
 
-# Park 2 output
-# new_instance = Text.create_instance('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
-# new_instance.frequency('book')
-# new_instance.common_words()
-# new_instance.unique_words()
+# Part 2 output
+new_instance = Text.create_instance('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
+new_instance.frequency('book')
+new_instance.common_words()
+new_instance.unique_words()
 
 
-
-# Bonus
+# Bonus output
 sentence = TextModification(string)
 sentence.punctuation()
 sentence.remove_stopwords()
