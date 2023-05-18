@@ -55,20 +55,26 @@ class Text :
     
 # Bonus
 import re
-import nltk
+import nltk                     # THIS IS NOT WORKING FOR ME EVEN THOUGH I DOWNLOADED
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 class TextModification(Text) :
     
-    def punctuation(self) :
-        self.string = re.sub(r'[^\w\s]', '', string)
-        print(self.string)
+    def punctuation(self, file_name) :      # Removed punctuation from big file
+        with open(file_name, "r") as file :
+            new_text = file.read()
+            without_punct = re.sub(r'[^\w\s]', '', new_text)
+        print(without_punct)
 
-    def remove_stopwords(text):
-        stop_words = stopwords.words('english')
-        filtered_text = [word for word in text.split() if word.lower() not in stop_words]
-        return ' '.join(filtered_text)
-
+    def remove_stopwords(self):             # Removed stopwords from senetnce
+            word_list = self.sentence_list()
+            stop_words = stopwords.words('english')
+            print(stop_words)
+            filtered_text = [word for word in word_list if word not in stop_words]
+            return ' '.join(filtered_text)
+        
+        
  # Part I output         
 string = 'A good book would sometimes cost as much as a good house.'
 sentence = Text(string)
@@ -77,15 +83,15 @@ sentence.common_words()
 sentence.unique_words()
 
 # Part 2 output
-new_instance = Text.create_instance('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
-new_instance.frequency('book')
-new_instance.common_words()
-new_instance.unique_words()
+# new_instance = Text.create_instance('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
+# new_instance.frequency('book')
+# new_instance.common_words()
+# new_instance.unique_words()
 
 
 # Bonus output
-sentence = TextModification(string)
-sentence.punctuation()
+sentence = TextModification('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
+sentence.punctuation('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
 sentence.remove_stopwords()
 
 
