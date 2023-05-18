@@ -3,7 +3,7 @@ from time import time
 
 def load_time(url) :
     start_time = time()  # number of second since the epoch
-    response = requests.get(url)
+    requests.get(url)
     end_time = time()
     time_passed = end_time - start_time
     return time_passed
