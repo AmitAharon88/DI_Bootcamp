@@ -55,8 +55,8 @@ class Text :
     
 # Bonus
 import re
-import nltk                     # THIS IS NOT WORKING FOR ME EVEN THOUGH I DOWNLOADED
-nltk.download('stopwords')
+# import nltk                     
+# nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 class TextModification(Text) :
@@ -69,8 +69,9 @@ class TextModification(Text) :
 
     def remove_stopwords(self):             # Removed stopwords from senetnce
             word_list = self.sentence_list()
+            # without_punct = self.punctuation(file_name)
+            # word_list = without_punct.split(' ')
             stop_words = stopwords.words('english')
-            print(stop_words)
             filtered_text = [word for word in word_list if word not in stop_words]
             return ' '.join(filtered_text)
         
@@ -90,8 +91,9 @@ new_instance.unique_words()
 
 
 # Bonus output
-sentence = TextModification('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
-sentence.punctuation('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
-sentence.remove_stopwords()
+sentence2 = TextModification('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
+sentence2.punctuation('DI_Bootcamp/Week3/Day4/DailyChallenge/the_stranger.txt')
+sentence3 = TextModification('A good book would sometimes cost as much as a good house.')
+print(sentence3.remove_stopwords())
 
 
