@@ -1,10 +1,11 @@
 # Part I
 class Text :
     def __init__(self, string) :
-        self.string = string
+        self.sentence = string
 
     def sentence_list(self) :
-        word_list = self.string.split(' ')
+        self.sentence = self.sentence.replace('.', '').lower()
+        word_list = self.sentence.split(' ')
         return word_list
     
     def frequency(self, word) :
@@ -37,15 +38,15 @@ class Text :
         max_frequency = max(word_dict.values())
         common_words = [word for word, freq in word_dict.items() if freq == max_frequency]
         # for the key, value in word dict, if the value is eual to the max frequency then add the its key(the word) to a list containing the common words.
-        print(', '.join(common_words))
+        print(', '.join(common_words))      # converted the list back to a string
         
     def unique_words(self) :
         word_dict = self.word_dict()
         min_frequency = min(word_dict.values())
         unique_words = [word for word, freq in word_dict.items() if freq == min_frequency]
-        print(unique_words)
+        print(unique_words)     # left it in list form
 
-    # Part II
+# Part II
     @classmethod
     def create_instance(cls, file_name) :
         with open(file_name, "r") as file :
