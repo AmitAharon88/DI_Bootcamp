@@ -56,7 +56,7 @@ for num in range(1, 10) :
         while board[player_row][player_column] != '':
             player_row = int(input('That spot is taken. Enter row: '))
             player_column = int(input('Enter column: '))
-        board[player_row][player_column] = player_1 
+        board[player_row-1][player_column-1] = player_1 
         display_board()
     elif num % 2 ==0 and check_win()==False :
         print('Player 2, its your turn...')
