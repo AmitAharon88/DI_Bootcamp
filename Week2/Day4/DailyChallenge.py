@@ -23,5 +23,6 @@ for num in range(num_col) :
             decoded_str += letter
     decoded_matrix.append(decoded_str)
 decoded_message = ' '.join(decoded_matrix)
+new_decoded_message = decoded_message.replace('s', 's ').replace(' i', 'i')
 
-print(decoded_message)
+print(new_decoded_message)
