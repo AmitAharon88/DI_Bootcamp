@@ -53,7 +53,7 @@ for num in range(1, 10) :
         print('Player 1, its your turn...')
         player_row = int(input('Enter row: '))
         player_column = int(input('Enter column: '))
-        while board[player_row][player_column] != '':
+        while board[player_row-1][player_column-1] != '':
             player_row = int(input('That spot is taken. Enter row: '))
             player_column = int(input('Enter column: '))
         board[player_row-1][player_column-1] = player_1 
@@ -62,13 +62,14 @@ for num in range(1, 10) :
         print('Player 2, its your turn...')
         player_row = int(input('Enter row: '))
         player_column = int(input('Enter column: '))
-        while board[player_row][player_column] != '':
+        while board[player_row-1][player_column-1] != '':
             player_row = int(input('That spot is taken. Enter row: '))
             player_column = int(input('Enter column: '))
-        board[player_row][player_column] = player_2
+        board[player_row-1][player_column-1] = player_2
         display_board()
     else :
        if check_win () :
-        print('You win!') 
+        print('You win!')
+        break
     
       
