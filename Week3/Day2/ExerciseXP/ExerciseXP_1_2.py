@@ -1,41 +1,41 @@
-# # Exercise 1
-# class Pets():
-#     def __init__(self, animals):
-#         self.animals = animals
+# Exercise 1
+class Pets():
+    def __init__(self, animals):
+        self.animals = animals
 
-#     def walk(self):
-#         for animal in self.animals:
-#             print(animal.walk())
+    def walk(self):
+        for animal in self.animals:
+            print(animal.walk())
 
-# class Cat():
-#     is_lazy = True
+class Cat():
+    is_lazy = True
 
-#     def __init__(self, name, age):
-#         self.name = name
-#         self.age = age
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-#     def walk(self):
-#         return f'{self.name} is just walking around'
+    def walk(self):
+        return f'{self.name} is just walking around'
 
-# class Bengal(Cat):
-#     def sing(self, sounds):
-#         return f'{sounds}'
+class Bengal(Cat):
+    def sing(self, sounds):
+        return f'{sounds}'
 
-# class Chartreux(Cat):
-#     def sing(self, sounds):
-#         return f'{sounds}'
+class Chartreux(Cat):
+    def sing(self, sounds):
+        return f'{sounds}'
     
-# class Siamese(Cat):
-#     pass
+class Siamese(Cat):
+    pass
 
-# all_cats = [cat1, cat2, cat3]
+cat1 = Bengal('Annie', 3)
+cat2 = Chartreux('Max', 1)
+cat3 = Siamese('Jerry', 2)
 
-# cat1 = Bengal('Annie', 3)
-# cat2 = Chartreux('Max', 1)
-# cat3 = Siamese('Jerry', 2)
+all_cats = [cat1, cat2, cat3]
+sara_pets = Pets(all_cats)
 
-# all_cats = [cat1, cat2, cat3]
-# sara_pets
+print(sara_pets.walk())
 
 # Exercise 2
 class Dog :
