@@ -40,3 +40,6 @@
 -- SELECT * FROM students WHERE first_name LIKE '%a_'
 -- SELECT * FROM students WHERE id IN (1, 3)
 -- SELECT * FROM students Where birth_date >= '2000-01-01'
+
+-- SELECT first_name, last_name, TO_CHAR(birth_date, 'DD/MM/YYYY') AS birth_date FROM students
+-- (Changed the date but not perminatly)
