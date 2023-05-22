@@ -46,8 +46,7 @@
 -- FROM FirstTab AS ft
 -- WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id IS NULL )
 
--- ** Assumption- 3 (Output- 0)
--- It will count the number of rows in the "FirstTab" table where the corresponding "id" values are not NULL in the "SecondTab" table.
+-- Assumption- 3 (Output- 0)
 
 
 
@@ -57,8 +56,8 @@
 -- FROM FirstTab AS ft
 -- WHERE ft.id NOT IN ( SELECT id FROM SecondTab WHERE id = 5 )
 
--- ** Assumption- 3 (Output- 2)
--- It will count the number of rows in the "FirstTab" table where the corresponding "id" values are not equal to 5 in the "SecondTab" table.
+-- Assumption- 3 (Output- 2)
+
 
 
 
@@ -68,8 +67,8 @@
 -- FROM FirstTab AS ft
 -- WHERE ft.id NOT IN (SELECT id FROM SecondTab)
 
--- ** Assumption- 2 (Output- 0)
--- It will count the number of rows in the "FirstTab" table where the corresponding "id" values are not found in the "SecondTab" table.
+-- Assumption- 2 (Output- 0)
+
 
 
 
@@ -79,5 +78,7 @@
 -- FROM FirstTab AS ft
 -- WHERE ft.id NOT IN (SELECT id FROM SecondTab WHERE id IS NOT NULL)
 
--- ** Assumption- 2 (Output- 2)
--- It will the number of rows in the "FirstTab" table where the corresponding "id" values are not found or are NULL in the "SecondTab" table.
+-- Assumption- 2 (Output- 2)
+
+
+-- ***** After going through these i understand that NULL cannot be compared to NULL as it is not a value but instead an absence of a value. IN/NOT IN clause does not work with NULL
