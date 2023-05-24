@@ -35,7 +35,7 @@
 -- 4.2
 -- SELECT customer.first_name, customer_profile.isLoggedIn
 -- FROM customer
--- INNER JOIN customer_profile
+-- LEFT JOIN customer_profile
 -- ON customer.id = customer_profile.customer_id
 
 -- 4.3
@@ -72,21 +72,19 @@
 
 -- 5.
 -- CREATE TABLE library(
--- 	book_fk_id INTEGER REFERENCES book (book_id),
--- 	student_id INTEGER REFERENCES student (student_id),
--- 	borrowed_date TIMESTAMP
+-- 	book_fk_id INTEGER REFERENCES book (book_id) ON DELETE CASCADE ON UPDATE CASCADE,
+-- 	student_id INTEGER REFERENCES student (student_id) ON DELETE CASCADE ON UPDATE CASCADE,
+-- 	borrowed_date DATE DEFAULT NOW() NOT NULL
 -- )
 
 -- 6.
--- INSERT INTO library(book_fk_id, student_id, borrowed_date)
+-- INSERT INTO library(book_fk_id, student_id)
 -- VALUES ((SELECT book_id FROM book WHERE title = 'Alice In Wonderland'),
--- 		(SELECT student_id FROM student WHERE name = 'John'),
---         '2022-02-15');
+-- 		(SELECT student_id FROM student WHERE name = 'John'));
 
--- INSERT INTO library(book_fk_id, student_id, borrowed_date)
+-- INSERT INTO library(book_fk_id, student_id)
 -- VALUES ((SELECT book_id FROM book WHERE title = 'To kill a mockingbird'),
--- 		(SELECT student_id FROM student WHERE name = 'Bob'),
---         '2022-03-03');
+-- 		(SELECT student_id FROM student WHERE name = 'Bob'));
 
 -- INSERT INTO library(book_fk_id, student_id, borrowed_date)
 -- VALUES ((SELECT book_id FROM book WHERE title = 'Alice In Wonderland'),
@@ -116,4 +114,5 @@
 
 -- 7.4
 -- DELETE FROM student WHERE name = 'Bob'
--- ** it wont delete because they still refernce from the library table and a ON DELETE CASCADE was not provided when making the library table.
+-- select * from library
+-- ** Delete was successful becase we added ON DELETE CASCADE for this column when creating  the library table.
