@@ -21,6 +21,10 @@
 -- INSERT INTO customer_profile(isLoggedIn, customer_id)
 -- VALUES(TRUE, 1), (FALSE, 2)
 
+-- could have also done this by embeding and select
+-- INSERT INTO customer_profile(isLoggedIn, customer_id)
+-- VALUES(TRUE, (select id from customer where first_name = 'John')), (FALSE, (select id from customer where first_name = 'Jerome'))
+
 -- 4.1
 -- SELECT first_name
 -- FROM customer
