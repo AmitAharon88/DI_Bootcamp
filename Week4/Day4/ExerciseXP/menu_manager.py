@@ -1,5 +1,4 @@
-from menu_item import MenuItem
-import psycopg2
+from menu_item import *
 
 connection = psycopg2.connect(
     database="W4D4", 
@@ -11,21 +10,20 @@ connection = psycopg2.connect(
 
 cursor = connection.cursor()
 
-class MenuManager(MenuItem) :
-        
-    def get_by_name(name):
+class MenuManager() :
+    
+    @classmethod    
+    def get_by_name(cls, name) :
         query = f"SELECT * FROM menu_items WHERE item_name = '{name}'" 
         cursor.execute(query)
         result = cursor.fetchall()
-        if len(result)>0:
-            item_id, item_name, item_price = result[0]
-            menu_item = MenuItem(item_name, item_price)
-            menu_item.item_id = item_id
-            return menu_item.name
+        if result :
+            return result
         else:
             return None
-        
-    def all_items() :
+    
+    @classmethod
+    def all_items(cls) :
         query = f"SELECT * FROM menu_items"
         cursor.execute(query)
         result = cursor.fetchall()
@@ -36,5 +34,3 @@ print(item2)
 items = MenuManager.all_items()
 print(items)
 
-cursor.close()
-connection.close()
