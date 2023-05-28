@@ -1,11 +1,12 @@
 from django.shortcuts import render
 import json
+import os
 # Create your views here.
 
-filename = 'Day1/ExerciseXP/animals-info/info/json_file.json'
+filename = '/Users/amitaharon/Documents/Developers_Institute/DI_Bootcamp/Week5/Day1/ExerciseXP/animals-info/info/json_file.json'
 
 
-with open("json_file.json", "r") as f:
+with open(filename, "r") as f:
     data = json.load(f)
 
 animals = data['animals']
@@ -16,11 +17,11 @@ def animal (request, id) :
     for i in animals :
         if i['id'] == id :
             animal_selected = i
-    return render (request, 'animal.html', animal_selected)
+    return render (request, 'animals.html', animal_selected)
 
 def family (request, id) :
     family_selected = ''
-    for i in family :
+    for i in families :
         if i['id'] == id :
             family_selected = i
-    return render (request, 'family.html', family_selected)
+    return render (request, 'families.html', family_selected)
