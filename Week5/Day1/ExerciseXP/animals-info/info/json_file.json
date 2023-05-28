@@ -1,0 +1,97 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Dog",
+      "legs": 4,
+      "weight": 5.67,
+      "height": 4.2,
+      "speed": 34,
+      "family": 2
+    },
+    {
+      "id": 2,
+      "name": "Domestic Cat",
+      "legs": 2,
+      "weight": 5.67,
+      "height": 4.2,
+      "speed": 34,
+      "family": 1
+    },
+    {
+      "id": 3,
+      "name": "Panther",
+      "legs": 2,
+      "weight": 5.67,
+      "height": 4.2,
+      "speed": 34,
+      "family": 3
+    },
+    {
+      "id": 4,
+      "name": "Alligator",
+      "legs": 4,
+      "weight": 52,
+      "height": 0.5,
+      "speed": 20,
+      "family": 4
+    },
+    {
+      "id": 5,
+      "name": "bee",
+      "legs": 4,
+      "weight": 0.02,
+      "height": 0.03,
+      "speed": 10,
+      "family": 5
+    },
+    {
+      "id": 6,
+      "name": "Daddy long leg",
+      "legs": 4,
+      "weight": 0.02,
+      "height": 0.03,
+      "speed": 7,
+      "family": 6
+    },
+    {
+      "id": 7,
+      "name": "frog",
+      "legs": 4,
+      "weight": 0.3,
+      "height": 0.5,
+      "speed": 15,
+      "family": 7
+    }
+  ],
+  "families": [
+    {
+      "id": 1,
+      "name": "Felidae"
+    },
+    {
+      "id": 2,
+      "name": "Caninae"
+    },
+    {
+      "id": 3,
+      "name": "mammal"
+    },
+    {
+      "id": 4,
+      "name": "reptile"
+    },
+    {
+      "id": 5,
+      "name": "insect"
+    },
+    {
+      "id": 6,
+      "name": "arachnid"
+    },
+    {
+      "id": 7,
+      "name": "amphibian"
+    }
+  ]
+}
