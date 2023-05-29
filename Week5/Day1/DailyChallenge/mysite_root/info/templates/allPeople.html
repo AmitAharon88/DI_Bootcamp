@@ -6,11 +6,9 @@
     <title>Document</title>
   </head>
   <body>
-    <h3>
-      {{id}}<br />
-      {{name}}<br />
-      {{age}}<br />
-      {{country}}<br />
-    </h3>
+    <h1>People</h1>
+    {% for person in people_list %}
+    <p>{{person}}</p>
+    {% endfor %}
   </body>
 </html>
