@@ -20,7 +20,7 @@ from info.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('family/<int:id>', show_family, name='show_family'),
-    path('animal/<int:id>', show_animal, name='show_animal'),
+    path('family/<int:family_id>', show_family, name='show_family'),
+    path('animal/<int:animal_id>', show_animal, name='show_animal'),
     path('animals', show_all_animals, name='show_animals'),
 ]

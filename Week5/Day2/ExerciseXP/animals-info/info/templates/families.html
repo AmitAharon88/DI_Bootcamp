@@ -9,7 +9,7 @@
     <h1>Animals in the family:</h1>
     <ul>
       {% for animal in animals %}
-      <li><a href="/animal/{{ animal.id }}/">{{ animal }}</a></li>
+      <li>{{ animal.name }}</li>
       {% endfor %}
     </ul>
   </body>
