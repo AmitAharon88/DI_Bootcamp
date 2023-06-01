@@ -1,0 +1,11 @@
+- create project, app, include app in settings
+
+- connect to database
+- create models - makemigrations, migrate
+- create forms for todo, category models
+- create views for adding todo and categories 
+- templates 
+- urls
+
+- create view for all posts
+- create TodoDoneForm
