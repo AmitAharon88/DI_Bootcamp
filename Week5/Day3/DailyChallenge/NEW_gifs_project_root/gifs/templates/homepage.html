@@ -7,9 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>{{ category.name }} Gifs</h1>
-    {%if gifs%} {% for gif in gifs %}
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'new_gif' %}">Add New GIF</a></li>
+          <li><a href="{% url 'new_category' %}">Add New Category</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h1>Homepage</h1>
+    {% for gif in gifs %}
     <img src="{{ gif.url }}" alt="{{ gif.title }}" />
-    {% endfor %} {% endif %}
+    {% endfor %}
   </body>
 </html>

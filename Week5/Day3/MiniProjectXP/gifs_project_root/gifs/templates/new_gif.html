@@ -7,9 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>{{ category.name }} Gifs</h1>
-    {%if gifs%} {% for gif in gifs %}
-    <img src="{{ gif.url }}" alt="{{ gif.title }}" />
-    {% endfor %} {% endif %}
+    <h1>Add New GIF</h1>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>

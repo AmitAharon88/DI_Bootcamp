@@ -20,6 +20,6 @@ from info.views import all_people_view, person_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('people', all_people_view, name='show_people'),
+    path('people/', all_people_view, name='show_people'),
     path('people/<int:id>', person_view, name='show_person')
 ]

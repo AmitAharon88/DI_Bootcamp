@@ -7,9 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>{{ category.name }} Gifs</h1>
-    {%if gifs%} {% for gif in gifs %}
+    <h1>Popular GIFs</h1>
+    {% for gif in gifs %}
+    <h3>{{ gif.title }}</h3>
     <img src="{{ gif.url }}" alt="{{ gif.title }}" />
-    {% endfor %} {% endif %}
+    <p>Likes: {{ gif.likes }}</p>
+    {% empty %}
+    <p>No popular GIFs found.</p>
+    {% endfor %}
   </body>
 </html>

@@ -21,9 +21,9 @@ from gifs.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name='homepage'),
-    path('new-gif/', new_category, name='new_gif'),
+    path('new-gif/', new_gif, name='new_gif'),
     path('new-category/', new_category, name='new_category'),
-    path('category/<int:id>', category, name='category'),
+    path('category/<int:category_id>', category, name='category'),
     path('categories/', categories, name='categories'),
-    path('gif/<int:id>', gif, name='gif')
+    path('gif/<int:gif_id>', gif, name='gif')
 ]
