@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Vehicle Detail</h2>
+    {% if vehicle %}
+    <p>Vehicle type: {{ vehicle.vehicle_type.name }}</p>
+    <p>Size: {{ vehicle.size.name }}</p>
+    <p>Cost: {{ vehicle.cost }}</p>
+    <p>
+      Status: {% if rental.return_date == Null%} Currently Rented {% else %}
+      Available {% endif %}
+    </p>
+    {% else %}
+    <p>Vehicle not found.</p>
+    {% endif %}
+  </body>
+</html>

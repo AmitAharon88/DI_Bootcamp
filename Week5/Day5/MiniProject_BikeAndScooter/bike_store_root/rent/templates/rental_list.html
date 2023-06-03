@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>All Rentals</h1>
+    {% for rental in rentals %}
+    <p>Rental ID: {{ rental.id }}</p>
+    <p>Rental Customer: {{ rental.customer }}</p>
+    <p>Rental Date: {{ rental.rental_date }}</p>
+    <p>Return Date: {{ rental.return_date }}</p>
+    <hr />
+    {% endfor %}
+  </body>
+</html>

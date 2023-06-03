@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add category</title>
+    <title>Document</title>
   </head>
   <body>
-    <h1>Add Category:</h1>
+    <h2>Create Rental</h2>
     <form method="post">
-      {%csrf_token%} {{form}}
-      <button type="submit">Submit</button>
+      {% csrf_token %} {{ form.customer_id }} {{ form.vehicle_id }}
+      <button type="submit">Create</button>
     </form>
   </body>
 </html>

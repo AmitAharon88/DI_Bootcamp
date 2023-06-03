@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Customer Details:</h2>
+    <p>First Name: {{ rental.customer.first_name }}</p>
+    <p>Last Name: {{ rental.customer.last_name }}</p>
+    <p>Email: {{ rental.customer.email }}</p>
+    <p>Phone Number: {{ rental.customer.phone_number }}</p>
+    <p>Address: {{ rental.customer.address }}</p>
+    <p>City: {{ rental.customer.city }}</p>
+    <p>Country: {{ rental.customer.country }}</p>
+    <br />
+    <h2>Vehicle Details:</h2>
+    <p>Vehicle Type: {{ rental.vehicle.vehicle_type }}</p>
+    <p>Date Created: {{ rental.vehicle.date_created }}</p>
+    <p>Real Cost: {{ rental.vehicle.cost }}</p>
+    <p>Size: {{ rental.vehicle.size }}</p>
+    <br />
+    <h2>Rental Details:</h2>
+    <p>Rental Date: {{ rental.rental_date }}</p>
+    <p>
+      Return Date: {% if rental.return_date %} {{ rental.return_date }} {% else
+      %} Not yet returned {% endif %}
+    </p>
+  </body>
+</html>

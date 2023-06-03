@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Vehicle List</h2>
+    {% for type in vehicle_types %}
+    <h3>Vehicle type: {{ type.name }}</h3>
+    {% for vehicle in vehicles %}
+    {% if vehicle.vehicle_type_id == type.id %}
+    <p><a href=“/rent/vehicle/{{ vehicle.id }}“>Vehicle ID: {{ vehicle.id }}</a></p>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </body>
+</html>
+
+
