@@ -9,17 +9,17 @@ from django.views.generic import ListView
 class HomePageView(ListView) :
     model = Film
     template_name = 'homepage.html'
-    content_type_name = 'homepage_list'
+    context_object_name = 'films'
     success_url = reverse_lazy('homepage')
     
 class FilmCreateView(CreateView) :
     model = Film
     form_class = FilmForm
-    template_name = 'addfilm.html'
+    template_name = 'film/addfilm.html'
     success_url = reverse_lazy('addfilm')
 
 class DirectorCreateView(CreateView):
     model = Director
     form_class = DirectorForm
-    template_name = 'adddirector.html'
+    template_name = 'director/adddirector.html'
     success_url = reverse_lazy('adddirector')

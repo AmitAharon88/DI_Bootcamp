@@ -1,19 +1,18 @@
-{% extends 'base.html' %} {% block content %} {% extends "base.html" %} {% block
-content %}
+{% extends "base.html" %} {% block content %}
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Films with Directors</h5>
-    {% for film in films %}
+    {% for i in films %}
     <div class="card">
       <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-muted">{{ film.title }}</h6>
-        <p class="card-text">Directed by: {{ film.director }}</p>
+        <h6 class="card-subtitle mb-2 text-muted">{{ i.title }}</h6>
+        <p class="card-text">Directed by: {{ i.director }}</p>
         <p class="card-text">
-          Release Date: {{ film.release_date|date:"F j, Y" }}
+          Release Date: {{ i.release_date|date:"F j, Y" }}
         </p>
       </div>
     </div>
     {% endfor %}
   </div>
 </div>
-{% endblock %} {% endblock content %}
+{% endblock content %}
