@@ -30,3 +30,12 @@ class Film(models.Model) :
 
     def __str__(self) :
         return self.title
+
+class Review(models.Model) :
+    film = models.ForeignKey(Film, on_delete=models.CASCADE)
+    review_text = models.TextField()
+    rating = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
+    review_date = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self) :
+        return self.film
