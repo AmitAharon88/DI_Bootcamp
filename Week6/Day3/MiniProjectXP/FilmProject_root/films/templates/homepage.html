@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+<div class="card">
+  <div class="card-body">
+    {% if user.is_authenticated %}
+    <h3 class="card-title">Welcome {{user.first_name}}</h5>
+    <h5 class="card-title">Films</h5>
+    {% for i in films %}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ i.title }}</h5>
+            {%for film_director in i.director.all%}
+            <h6 class="card-title">{{film_director}}</h6>
+            {% endfor %} 
+            <p class="card-text">
+              Release Date: {{ i.release_date|date:"F j, Y" }}
+            </p>
+            <a href="{% url 'deletefilm' i.id %}" class="btn btn-primary">Delete film</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <p>Please login to view the films.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
+
+<!-- old code -->
+   <!-- <div class="card">
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">{{ i.title }}</h6>
+        <p class="card-text">Directed by: {{ i.director }}</p>
+        <p class="card-text">
+          Release Date: {{ i.release_date|date:"F j, Y" }}
+        </p> -->

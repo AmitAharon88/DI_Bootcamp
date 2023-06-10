@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.admin.widgets import AdminSearchWidget
 from django.contrib.admin.views.main import SEARCH_VAR
 from .models import PhoneNumberModel
+from phonenumber_field.widgets import PhoneNumberInternationalFallbackWidget
+
 
 class PhoneNumberModelForm(forms.ModelForm):
     phone_number = PhoneNumberField(widget=PhoneNumberInternationalFallbackWidget)
