@@ -7,11 +7,14 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Person</h1>
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% else %}
+    <h1>Person Details</h1>
 
     {{person.name}}<br />
     {{person.email}}<br />
     {{person.phone_number}}<br />
-    {{person.address}}
+    {{person.address}} {% endif %}
   </body>
 </html>
