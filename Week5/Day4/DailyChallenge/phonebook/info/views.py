@@ -21,15 +21,14 @@ def by_number(request, phonenumber_search):
 
 def search_by(request) :
      if request.method == 'POST':
-        form = request.POST
-        filled_form = PersonForm(form)
+        form = PersonForm(request.POST)
         if form.is_valid():
-            data= filled_form.cleaned_data
-            if data['phonenumber'] :
-                return redirect('phonenumber', phonenumber=data['phonenumber'])
-            elif data['name']:
-                return redirect('name', name=data['name'])
+            name = form.cleaned_data.get('name')
+            phone_number = form.cleaned_data.get('phone_number')
+            if name:
+                return redirect('by_name', name_search=name)
+            elif phone_number:
+                return redirect('by_number', phonenumber_search=phone_number)
         else:
             form = PersonForm()
-            context = {'form': form}
-        return render(request, 'person_search.html', context)
+        return render(request, 'person_search.html', {'form': form})

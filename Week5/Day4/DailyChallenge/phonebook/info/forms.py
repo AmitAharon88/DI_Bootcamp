@@ -1,7 +1,6 @@
 from django import forms
-from .models import Person
+from phonenumber_field.formfields import PhoneNumberField
 
-class PersonForm(forms.ModelForm):
-    class Meta :
-        model= Person
-        fields= 'name', 'phone_number'
+class PersonForm(forms.Form):
+    name = forms.CharField(label='Name', required=False)
+    phone_number = PhoneNumberField(label='Phone Number', required=False)
