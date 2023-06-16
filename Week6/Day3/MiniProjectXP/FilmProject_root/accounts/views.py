@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView
+from django.views.generic import CreateView, DetailView
 from .forms import SignupForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -10,6 +10,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.views.generic import DeleteView
 from films.models import Film
+from .models import UserProfile
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -38,7 +40,10 @@ class SignupView(CreateView):
     #         form.add_error(None, error_message)
     #         return self.form_invalid(form)
 
-def profile_view(request, user_id):
-    user = get_object_or_404(User, id=user_id)
-    context = {'user': user}
-    return render(request, 'profile.html', context)
+class ProfileDetailView(DetailView, LoginRequiredMixin):
+    model = UserProfile
+    template_name = 'profile.html'
+    success_url = reverse_lazy('profile')
+    
+    def get_object(self) :
+        return self.request.user

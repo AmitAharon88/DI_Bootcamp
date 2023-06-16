@@ -6,5 +6,7 @@ urlpatterns = [
     path('addfilm/', FilmCreateView.as_view(), name='addfilm'),
     path('adddirector/', DirectorCreateView.as_view(), name='adddirector'),
     path('addreview/', ReviewCreateView.as_view(), name='addreview'),
-    path('deletefilm/<int:pk>/', DeleteFilmView.as_view(), name='deletefilm')
+    path('deletefilm/<int:pk>/', DeleteFilmView.as_view(), name='deletefilm'),
+    # path('favfilm/<int:pk>/', FavoriteFilmView.as_view(), name='favfilm'),
+    path('detailfilm/<int:pk>/', FilmDetailView.as_view(), name='detailfilm'),
 ]

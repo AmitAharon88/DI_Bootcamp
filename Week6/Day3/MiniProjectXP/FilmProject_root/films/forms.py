@@ -1,6 +1,7 @@
 from django import forms
-from .models import Film, Director, Review
+from .models import Film, Director, Review, Producer
 from django.utils import timezone
+# from django.forms import formset_factory
 
 class FilmForm(forms.ModelForm):
    	class Meta:
@@ -29,3 +30,13 @@ class ReviewForm(forms.ModelForm):
             widgets = {
             'rating': forms.RadioSelect
             }
+
+# class ProducerForm(forms.ModelForm):
+#    	class Meta:
+#             model = Producer
+#             fields = '__all__'
+#             widgets = {
+#             'rating': forms.RadioSelect
+#             }
+
+# ProducerFormSet = formset_factory(model=Producer, form=ProducerForm, extra=0)

@@ -1,11 +1,11 @@
-from django.shortcuts import render
-from django.views.generic import CreateView, ListView, DeleteView
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import CreateView, ListView, DeleteView, View, DetailView
 from .models import Film, Director, Review
 from .forms import FilmForm, DirectorForm, ReviewForm
 from django.urls import reverse_lazy
-from django.views.generic import ListView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
+from .forms import *
 
 # Create your views here.
 
@@ -20,6 +20,12 @@ class FilmCreateView(CreateView) :
     form_class = FilmForm
     template_name = 'film/addfilm.html'
     success_url = reverse_lazy('homepage')
+    
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['formset'] = ProducerFormSet
+    #     return context
+    
 
 class DirectorCreateView(CreateView):
     model = Director
@@ -50,3 +56,20 @@ class DeleteFilmView(UserPassesTestMixin, DeleteView) :
         if not self.request.user.is_superuser:
             queryset = queryset.none()
         return queryset
+
+# class FavoriteFilmView(View) :
+#     def post(self, request, film_id):
+#         film = get_object_or_404(Film, id=film_id)
+#         user = request.user
+
+#         if film in user.favorite_films.all():
+#             user.favorite_films.remove(film)
+#         else:
+#             user.favorite_films.add(film)
+
+#         return redirect('homepage')
+
+class FilmDetailView (DetailView) :
+    model = Film
+    template_name = 'film/detailfilm.html'
+    context_object_name = 'film'

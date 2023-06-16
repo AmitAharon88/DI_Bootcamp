@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Film Detail</h1>
+<p>Title: {{film.title}}</p>
+<p>Release date: {{film.release_date}}</p>
+<p>Created in country: {{film.created_in_country}}</p>
+<p>
+  Country availiblity: {% for country in film.available_in_countries.all %}
+  {{country}}
+</p>
+{% endfor %}
+<p>Category: {% for category in film.category.all %}{{category}}</p>
+{% endfor %}
+<p>
+  Director: {% for director in film.director.all %}{{director}} {% endfor %}
+</p>
+{% endblock content %}

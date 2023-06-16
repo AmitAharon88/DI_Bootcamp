@@ -7,6 +7,10 @@ from django.contrib.auth import authenticate, login
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.views.generic import DeleteView
+from films.models import Film
+
 # Create your views here.
 
 class SignupView(CreateView):

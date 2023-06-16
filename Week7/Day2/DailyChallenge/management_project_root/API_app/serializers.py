@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import *
 
 class DepartmentSerializer(serializers.HyperlinkedModelSerializer) :
-    url = serializers.HyperlinkedIdentityField(view_name='department-detail')
+    # url = serializers.HyperlinkedIdentityField(view_name='department-detail')
     class Meta :
         model = Department
         fields = ('name', 'description', 'url')

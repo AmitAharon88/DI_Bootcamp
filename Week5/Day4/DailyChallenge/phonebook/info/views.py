@@ -19,16 +19,19 @@ def by_number(request, phonenumber_search):
     context = {'person': person}
     return render(request, 'searched_person.html', context)
 
-def search_by(request) :
-     if request.method == 'POST':
+def search_by(request):
+    if request.method == 'POST':
         form = PersonForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data.get('name')
             phone_number = form.cleaned_data.get('phone_number')
             if name:
-                return redirect('by_name', name_search=name)
+                return redirect('name', name_search=name)
             elif phone_number:
-                return redirect('by_number', phonenumber_search=phone_number)
+                return redirect('Phone_number', phonenumber_search=phone_number)
         else:
             form = PersonForm()
-        return render(request, 'person_search.html', {'form': form})
+    else:
+        form = PersonForm()
+        
+    return render(request, 'person_search.html', {'form': form})
