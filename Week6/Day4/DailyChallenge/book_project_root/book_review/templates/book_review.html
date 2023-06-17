@@ -1,12 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
 <body>
-    <h1>Search:</h1>
+    <h1>Review {{book.title}}:</h1>
     <form method="post">
       {% csrf_token %}
-      <p>Search by book title:</p>
-      {{ form.title }}
-      <button type="submit">Search</button>
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
     </form>
   </body>
 </html>

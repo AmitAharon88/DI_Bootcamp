@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+
+<body>
+  {% if user.is_authenticated %}
+    <h1>Book List:</h1>
+    {% for book in books %}
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{book.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{book.author}}</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="{% url 'book_details' book.pk %}" class="card-link">Book details</a>
+          <a href="{% url 'review' book.pk %}" class="card-link">Write review</a>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>Please login to view the films.</p>
+  {% endif %}
+
+  </body>
+</html>
+
+{% endblock content %}

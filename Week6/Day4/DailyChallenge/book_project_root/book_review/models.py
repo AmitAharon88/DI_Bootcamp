@@ -16,9 +16,9 @@ class Book(models.Model):
         return self.title
     
 class BookReview(models.Model):
-    associated_book= models.ForeignKey(Book, on_delete=models.CASCADE)
+    associated_book= models.ForeignKey(Book, on_delete=models.CASCADE, related_name= 'reviews')
     user= models.ForeignKey(User, on_delete=models.CASCADE)
-    rating= models.IntegerField()
+    rating= models.IntegerField(choices=[(i, i) for i in range(1, 6)])
     review_text= models.TextField()
     
     def __str__(self):

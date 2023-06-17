@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>{{book.title}}</h1>
+<h3>{{book.author}}</h3>
+<p>Published date: {{book.published_date}}</p>
+<p>Description: {{book.description}}</p>
+<p>Page count: {{book.page_count}}</p>
+<p>Categories: {{book.categories}}</p>
+<p>Average Rating: {{ avg_rating }}</p>
+<p>Number of Reviews: {{ num_reviews }}</p>
+
+<a class="nav-link active" aria-current="page" href="{% url 'review' book.pk %}"
+  >Review this book</a
+>
+{% endblock content %}
