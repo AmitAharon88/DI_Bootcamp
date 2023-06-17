@@ -6,12 +6,14 @@
 <p>Created in country: {{film.created_in_country}}</p>
 <p>
   Country availiblity: {% for country in film.available_in_countries.all %}
-  {{country}}
+  {{country}},{% endfor %}
 </p>
-{% endfor %}
-<p>Category: {% for category in film.category.all %}{{category}}</p>
+<p>Category: {% for category in film.category.all %}{{category}},</p>
 {% endfor %}
 <p>
-  Director: {% for director in film.director.all %}{{director}} {% endfor %}
+  Director: {% for director in film.director.all %}{{director}}, {% endfor %}
+</p>
+<p>
+  Producer: {% for producer in film.producers.all %}{{producer}}, {% endfor %}
 </p>
 {% endblock content %}
