@@ -13,7 +13,7 @@ class RoomType(models.Model) :
 class Room(models.Model) :
     number =  models.CharField(max_length=10, unique=True)
     room_type = models.ForeignKey(RoomType, on_delete = models.CASCADE)
-    vacancy = models.BooleanField(default=False)
+    vacancy = models.BooleanField(default=True)
 
     def __str__(self) :
        return self.number

@@ -9,7 +9,11 @@
   <body>
     <h1>Search:</h1>
     <form method="post">
-      {% csrf_token %} {{ form.as_p }}
+      {% csrf_token %}
+      <p>Search by name:</p>
+      {{ form.name }}
+      <p>Search by phonenumber:</p>
+      {{ form.phone_number }}
       <button type="submit">Search</button>
     </form>
   </body>

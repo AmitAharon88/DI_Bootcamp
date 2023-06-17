@@ -1,45 +1,37 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Person
 from .forms import *
 # Create your views here.
 
 def by_name(request, name_search: str):
-    person = None
     try:
         person = Person.objects.get(name=name_search)
     except Person.DoesNotExist:
-        pass
+        return render(request, 'searched_person.html', {'error_message': 'No person by that name'})
     context = {'person': person}
-    return render(request, 'search.html', context)
+    return render(request, 'searched_person.html', context)
 
-def by_number(request, phonenumber: str):
-    person = None
+def by_number(request, phonenumber_search):
     try:
-        person = Person.objects.get(phone_number=phonenumber)
+        person = Person.objects.get(phone_number=phonenumber_search)
     except Person.DoesNotExist:
-        pass
+        return render(request, 'searched_person.html', {'error_message': 'No person by that phone number'})
     context = {'person': person}
-    return render(request, 'search.html', context)
+    return render(request, 'searched_person.html', context)
 
-def search_by(request) :
-     if request.method == 'POST':
-        form = request.POST
-        filled_form = PersonForm(form)
-        filled_form.save()
+def search_by(request):
+    if request.method == 'POST':
+        form = PersonForm(request.POST)
         if form.is_valid():
-            phone_number = form.cleaned_data['phone_number']
-            name = form.cleaned_data['name']
-
-            if phone_number :
-                people = Person.objects.filter(phone_number=phone_number)
-            elif name :
-                people = Person.objects.filter(name__icontains=name)
-            else:
-                people = Person.objects.none()
-
-            return render(request, 'person_search_results.html', {'people': people, 'form': form})
-    
+            name = form.cleaned_data.get('name')
+            phone_number = form.cleaned_data.get('phone_number')
+            if name:
+                return redirect('name', name_search=name)
+            elif phone_number:
+                return redirect('Phone_number', phonenumber_search=phone_number)
         else:
             form = PersonForm()
-            context = {'form': form}
-        return render(request, 'person_search.html', context)
+    else:
+        form = PersonForm()
+        
+    return render(request, 'person_search.html', {'form': form})

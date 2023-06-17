@@ -10,5 +10,5 @@ def info_page(request) :
 class BookingView(CreateView) :
     model = Booking
     template_name = 'booking.html'
-    fields = ['check_in_date', 'check_out_date', 'num_guests']
+    fields = ['guest_name','check_in_date', 'check_out_date', 'num_guests', 'room']
     success_url = reverse_lazy('booking')

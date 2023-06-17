@@ -1,9 +1,15 @@
 from django.contrib import admin
 from .models import Person
 # Register your models here.
-admin.site.register(Person)
+from phonenumber_field.formfields import PhoneNumberField
+from phonenumber_field.widgets import PhoneNumberPrefixWidget
 
-# 1. python manage.py createsuperuser
-# 2. in admin.py -> 
-#                   1. import model
-#                   2. admin.site.register(model)
+class PhoneRegion(admin.ModelAdmin):
+    list_display = ['name', 'email', 'phone_number', 'address']
+    list_editable = ['phone_number']
+    formfield_overrides = {
+        PhoneNumberField: {"widget": PhoneNumberPrefixWidget},
+    }
+    search_fields = ('name', 'email', 'phone_number')
+    
+admin.site.register(Person, PhoneRegion)

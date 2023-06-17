@@ -21,11 +21,6 @@ class FilmCreateView(CreateView) :
     template_name = 'film/addfilm.html'
     success_url = reverse_lazy('homepage')
     
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['formset'] = ProducerFormSet
-    #     return context
-    
 
 class DirectorCreateView(CreateView):
     model = Director
