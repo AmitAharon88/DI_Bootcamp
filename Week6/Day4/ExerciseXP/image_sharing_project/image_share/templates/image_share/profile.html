@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Profile</h1>
+<p>Username: {{ user.username }}</p>
+<p>Number of Images: {{ profile.get_num_images }}</p>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %} {% if user.is_authenticated %}
+<h3>Welcome {{user.username}}</h3>
+{% for image in images %}
+<div class="card" style="width: 18rem">
+  <img src="{{image.image_file}}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{image.title}}</h5>
+    <p class="card-text">{{image.description}}</p>
+    <p class="card-text">{{image.upload_user}}</p>
+  </div>
+</div>
+{% endfor %} {% else %}
+<p>Please login to access this page.</p>
+{% endif %} {% endblock content %}
