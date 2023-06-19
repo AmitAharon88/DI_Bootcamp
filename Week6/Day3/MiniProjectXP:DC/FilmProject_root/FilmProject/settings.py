@@ -135,4 +135,5 @@ LOGIN_REDIRECT_URL = 'homepage'
 LOGOUT_REDIRECT_URL = 'signup'
 LOGIN_URL = 'signup'
 
-# AUTH_USER_MODEL = 'films.User'
+# FOR W6D2 XP ---> NOT WORKING FOR ME
+# AUTH_USER_MODEL = 'accounts.CustomUser'
