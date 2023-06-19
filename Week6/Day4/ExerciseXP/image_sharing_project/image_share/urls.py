@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views
 from .views import RegisterView, AllImageListView, ImageCreateView, MyImageListView, ProfileListView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
    path('login/', views.LoginView.as_view(template_name='registration/login.html'), name='login'),
@@ -10,4 +12,4 @@ urlpatterns = [
    path('upload-image/', ImageCreateView.as_view(), name='upload-image'),
    path('my-images/', MyImageListView.as_view(), name='my-images'),
    path('profile/', ProfileListView.as_view(), name='profile'),
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

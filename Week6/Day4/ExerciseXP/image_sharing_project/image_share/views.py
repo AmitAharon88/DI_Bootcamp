@@ -24,7 +24,7 @@ class ImageCreateView(LoginRequiredMixin, CreateView) :
     model = Image
     form_class = ImageForm
     template_name = 'image_share/upload_image.html'
-    success_url = reverse_lazy('homepage')
+    success_url = reverse_lazy('feed')
     
     def form_valid(self, form):
         form.instance.user = self.request.user

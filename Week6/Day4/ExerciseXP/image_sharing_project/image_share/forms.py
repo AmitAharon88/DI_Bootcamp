@@ -11,7 +11,7 @@ class RegisterForm(UserCreationForm):
 class ImageForm(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ['title', 'description', 'image_file']
+        fields = ['title', 'description', 'image_file', 'upload_user']
         widgets = {
             'description': forms.Textarea(attrs={'rows': 3}),
         }
