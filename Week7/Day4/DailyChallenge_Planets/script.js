@@ -11,18 +11,6 @@ const planets = [
   "Pluto",
 ];
 
-const moons = {
-  Mercury: 0,
-  Venus: 0,
-  Earth: 1,
-  Mars: 2,
-  Jupiter: 79,
-  Saturn: 82,
-  Uranus: 27,
-  Neptune: 14,
-  Pluto: 5,
-};
-
 const container = document.querySelector(".listPlanets");
 
 for (const planet of planets) {
@@ -57,3 +45,60 @@ for (const planet of planets) {
     div.style.backgroundColor = "silver";
   }
 }
+
+// Other way to do it- With bonus
+
+// const allPlanets = [
+//   {
+//       namePlanet : "Earth",
+//       color : "lightblue",
+//       moons : 1
+//   },
+//   {
+//       namePlanet : "Venus",
+//       color : "pink",
+//       moons : 3
+//   },
+//   {
+//       namePlanet : "Jupiter",
+//       color : "orange",
+//       moons : 6
+//   },
+//   {
+//       namePlanet : "Uranus",
+//       color : "grey",
+//       moons : 2
+//   }
+// ]
+
+// function addPlanet () {
+//   const section = document.querySelector(".listPlanets");
+
+//   for (let planet of allPlanets){
+//       const divPlanet = document.createElement("div");
+//       divPlanet.classList.add("planet");
+
+//       const text = document.createTextNode(planet["namePlanet"]);
+//       divPlanet.appendChild(text)
+
+//       divPlanet.style.backgroundColor = planet["color"];
+//       section.appendChild(divPlanet);
+
+//       addMoon(planet, section)
+
+//   }
+// }
+
+// addPlanet()
+
+// function addMoon (planet, section) {
+//   let counter = 10;
+
+//   for (let i = 0; i < planet["moons"] ; i++){
+//       const divMoon = document.createElement("div");
+//       divMoon.classList.add("moon");
+//       divMoon.style.left = `${counter}rem`;
+//       counter += 5;
+//       section.appendChild(divMoon);
+//   }
+// }
