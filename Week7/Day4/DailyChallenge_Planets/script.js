@@ -23,7 +23,7 @@ const moons = {
   Pluto: 5,
 };
 
-const container = document.body;
+const container = document.querySelector(".listPlanets");
 
 for (const planet of planets) {
   // Create the element
@@ -31,11 +31,11 @@ for (const planet of planets) {
   // Create the class
   div.classList.add("planet", planet);
   // Create the content of the div
-  const content = document.createTextNode(planet);
-  // add the text to the div
-  div.appendChild(content);
+  const text = document.createTextNode(planet);
   // add the paragraph to the div
   container.appendChild(div);
+  // add the text to the div
+  div.appendChild(text);
 
   if (div.classList.contains("Mercury")) {
     div.style.backgroundColor = "darkred";
