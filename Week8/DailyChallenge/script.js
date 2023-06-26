@@ -43,3 +43,6 @@ function addStory(noun, adjective, person, verb, place) {
   );
   spanElem.appendChild(storyText);
 }
+
+
+// OTher way to do it (better)- from class
