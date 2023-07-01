@@ -13,19 +13,19 @@ nav {
   background-color: black;
   padding: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center; /* Center the items vertically */
+  align-items: center; /* Center the items vertically --> isn't working */
 }
 
 .navbar-brand {
   font-family: "SEGA LOGO FONT";
   font-size: 25px;
   color: white;
-  margin-right: 20px;
+  margin-right: 25vw;
 }
 
-.navbar-brand, form {
-    display: inline-block;
+.navbar-brand,
+form {
+  display: inline-block;
 }
 
 .form-control {
@@ -38,7 +38,6 @@ nav {
 section {
   padding: 30px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-between;
@@ -49,11 +48,15 @@ section {
 /* The above code worked when the bootstap nav bar was added but doesnt work without it. */
 
 .card {
-  background-color: #1bb53f;
+  background-color: #1f033a;
   padding: 10px;
   width: 250px;
   align-items: center;
   border-radius: 5px;
+  /* the moment i add this i loose the function of my autoseach
+  display: flex;
+  flex-direction: column;
+  justify-content: center; */
 }
 
 .image {
@@ -61,8 +64,19 @@ section {
   height: 200px;
   width: 200px;
   background-color: #9683df;
+  margin-top: 10px;
 }
 
 .textBox {
   padding: 10px;
+}
+
+.name {
+  font-weight: bolder;
+  font-size: 20px;
+  color: #9683df;
+}
+
+.email {
+  color: #9683df;
 }
