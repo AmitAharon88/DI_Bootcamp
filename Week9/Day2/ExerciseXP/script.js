@@ -34,5 +34,7 @@ promise2.then(result => console.log(result));
 
 
 // 🌟 Exercise 3 : Resolve & Reject
-const promise3 = new Promise(resolve => resolve(3));
-const promise4 = new Promise(reject => reject('Boo!'));
+const promise3a = new Promise(resolve => resolve(3));
+const promise3b = Promise.resolve(3);
+const promise4a = new Promise(reject => reject('Boo!'));
+const promise4b = Promise.resolve('Boo!');
