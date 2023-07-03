@@ -1,7 +1,7 @@
 const myForm = document.forms.myForm;
 let previousP;
 myForm.addEventListener('submit', (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const elementFN = document.getElementById('firstName').value;
     const elementLN = document.getElementById('lastName').value;
 
