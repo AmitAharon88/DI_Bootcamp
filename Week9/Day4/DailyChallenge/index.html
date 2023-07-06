@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+<body>
+    <div>
+        <h1>Currency Converter</h1>
+        <form id="fromAmount">
+            <label for=”from”>From: </label><br/>
+            <input type=”text” list=”fromCurrency” id=”from” name=”originalCurrency”>
+            <datalist id=”fromCurrency” class="dropDown">
+               <!-- Options to bed added -->
+            </datalist>
+        </form>
+        <form id="toAmount">
+            <label for=”to”>To: </label><br/>
+            <input type=”text” list=”toCurrency” id=”to” name=”convertedCurrency”>
+            <datalist id=”toCurrency” class="dropDown">
+               <!-- Options to bed added -->
+            </datalist>
+        </form>
+        <form id="amount">
+            <label for=”final”>Amount: </label><br/>
+            <input type=”number” name=”amount” step=”1” id=”final”>
+            <button type="submit">Convert</button>
+        </form>
+        <p></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

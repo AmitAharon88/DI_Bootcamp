@@ -106,8 +106,7 @@ function toJs() {
 function toMorse(morseJS) {
   const userInput = prompt("Provide a word or sentence: ");
   const userArray = userInput
-    .split(" ")
-    .join("")
+    .replaceAll(' ', '')
     .toLowerCase()
     .split("");
 
