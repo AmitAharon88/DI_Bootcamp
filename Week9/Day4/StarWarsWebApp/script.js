@@ -25,6 +25,7 @@ async function getData(i) {
         const response = await fetch(`https://www.swapi.tech/api/people/${i}`)
         if(response.ok) {
             const dataObj= await response.json();
+            console.log(dataObj)
             const personObject= dataObj['result']['properties']
             console.log(personObject)
             const response2 = await fetch(personObject['homeworld'])
