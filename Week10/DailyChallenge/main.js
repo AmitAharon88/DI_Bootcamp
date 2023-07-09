@@ -1,3 +1,9 @@
 const largeNumber = 356;
+const currentDate = new Date();
 
-module.exports = largeNumber;
+module.exports = {
+    largeNumber,
+    currentDate
+};
+
+// Part III:
