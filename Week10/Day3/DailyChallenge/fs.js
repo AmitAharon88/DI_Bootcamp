@@ -14,8 +14,12 @@ function totalSteps(data) {
     let position = 0;
     for (let symbol of dataArray) {
         symbol === '>' ? position += 1 : position -= 1;
-    }
-    console.log(position);
+    };
+    if (position > 0) {
+        console.log(`${position} steps to the right`);
+    } else {
+        console.log(`${position} steps to the left`);
+    };
 };
 
 function minusPosition(data) {
@@ -28,7 +32,7 @@ function minusPosition(data) {
        steps++
 
        if (currentPosition === -1) {
-        console.log(steps)
+        console.log(`${steps} steps`)
         break
         };
     }; 
