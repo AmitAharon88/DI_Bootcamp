@@ -4,7 +4,7 @@ const b = 5;
 
 console.log(largeNumber + b);
 
-// Part II: --> to do tomorrow when we learn http
+// Part II:
 // const http = require('http');
 
 // const server = http.createServer((request, response) => {
@@ -16,7 +16,7 @@ console.log(largeNumber + b);
 // server.listen(3000);
 
 
-// Part III: --> to do tomorrow when we learn http
+// Part III:
 
 const http = require('http');
 
