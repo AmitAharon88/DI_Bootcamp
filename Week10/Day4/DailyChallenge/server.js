@@ -1,59 +1,85 @@
-const fs = require('fs');
-const express = require('express');
+import express from 'express';
+import path from 'path';
+import {promises as fsPromises} from "fs" ;
 const app = express();
+const __dirname = path.resolve(); //create dirname
 
-// middleware
-app.use(express.urlencoded({ extended: true }));
+//needed for put and post methods
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Register route
-app.post('/register', (req, res) => {
-    const { firstName, lastName, email, username, password } = req.body;  // Get form data from request body
-    const usersData = getUsersData();  // Read the existing users data from JSON file
-    const userExists = usersData.find(user => user.username === username || user.password === password);
-    if (userExists) {
-      res.send('error1'); // Send error message if username or password already exist
-    } else {  // Add new user to the data
-      usersData.push({ firstName, lastName, email, username, password });
-      writeUsersData(usersData); // Write the updated users data to JSON file
-      res.send('registered'); // Send success message for registration
-    }
-  });
+// we need this line to make the files in public folder available
+app.use(express.static(__dirname + "/public"));
 
-// Login route
-app.post('/login', (req, res) => {
-    const { username, password } = req.body;  // Get form data from request body
-    const usersData = getUsersData();  // Read the existing users data from JSON file
-    const user = usersData.find(user => user.username === username && user.password === password);
-    if (user) {
-      res.send(`login`); // Send success message for login
+// for resgister
+app.get("/registeruser", (req, res) => {
+    res.sendFile(__dirname + "/public/register.html")
+})
+
+app.post("/registeruser", async (req, res) => {
+    const dataBody = req.body;
+    const readFileResponse = await readuser(dataBody);
+    res.json(readFileResponse);
+})
+
+
+async function readuser (currentUser) {
+    console.log("in readuser");
+    
+    const data = await fsPromises.readFile(__dirname + "/public/data.json")
+    .catch((err) => console.error('Failed to read file', err));
+    
+    const datausers = JSON.parse(data); //array of objects
+
+    console.log("datausers", datausers);
+    
+    const findUser = datausers.findIndex((element) => 
+            element.username === currentUser.username)
+
+    console.log("findUser", findUser);
+
+    if (findUser >= 0) {
+        console.log("Username already exists");
+        return "User already exists";
     } else {
-      res.send('error2'); // Send error message if user is not registered
+        datausers.push(currentUser);
+        console.log("User added successfully", datausers);
+        //VERY IMPORTANT TO STRINGIFY THE DATA SENT TO WRITE FILES
+        await fsPromises.writeFile(__dirname + "/public/data.json", JSON.stringify(datausers));
+        return "Hello, Your account has been created";
     }
-  });
-  
-  // Function to read users data from JSON file
-  function getUsersData() {
-    const usersData = fs.readFile('users.json', 'utf-8', (err, data) => {
-        if (err) {
-             return console.log(err);
-        }
-        console.log(data);
-    })
-    return JSON.parse(usersData);
+}
+
+// for login
+// renters the page
+app.get("/loginuser", (req, res) => {
+  res.sendFile(__dirname + "/public/login.html")
+})
+
+// sends input and checks it
+app.post("/loginuser", async (req, res) => {
+// login input
+  const dataBody = req.body;
+  const readLoginResponse = await loginUser(dataBody);
+  res.json(readLoginResponse);
+})
+
+async function loginUser (currentUser) { 
+  const data = await fsPromises.readFile(__dirname + "/public/data.json")
+  .catch((err) => console.error('Failed to read file', err));
+
+// data from json- all those who registered
+  const datausers = JSON.parse(data); //array of objects
+// loops over all the users in the json file and checks the user username/password and compares it that of the person who is trying to login
+  const foundUserLogin = datausers.find((user) => user.username === currentUser.username && user.password === currentUser.password);
+
+  if (foundUserLogin) {
+    return `Hi ${user.firstName}, welcome back!`;
+  } else {
+    return 'Username is not registered';
   }
-  
-  // Function to write users data to JSON file
-function writeUsersData(usersData) {
-    fs.writeFile('users.json', JSON.stringify(usersData), 'utf-8', (err) => {
-        if (err) return console.log(err);
-    });
 };
-  
-  
 
-
-// start server
-app.listen(3000, () => { // runs server on 3001
-console.log('run on 3000 using express');
+app.listen("3000", () => {
+    console.log("SERVER LISTENING");
 });

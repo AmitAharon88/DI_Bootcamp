@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include('partials/head');%>
+</head>
+<body>
+    <% include('partials/header'); %>
+
+    <h1>Search</h1>
+    <div>
+        <form id="byTitle" action="/search/title" method="POST">
+            <label for="title">By title:</label><br>
+            <input id="title" type="text" name="title"><br>
+            <button id="searchTitle" onClick="" type="submit">Search</button>
+        </form>
+        <form id="byCategory" action="/search/category" method="POST">
+            <label for="category">By Category:</label><br>
+            <input id="category" type="text" name="category"><br>
+            <button id="searchCategory" onClick="" type="submit">Search</button>
+        </form>
+    </div>
+
+    <% include('partials/footer'); %>
+</body>
+</html>
