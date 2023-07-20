@@ -10,17 +10,18 @@
     <h1>Welcome</h1>
     <div>
         <p>Login</p>
-        <form id="loginForm" action="/" method="POST">
+        <form id="loginForm">
             <label for="usernameL">Username:</label><br>
             <input id="usernameL" class="loginInput" type="text" name="username"><br>
             <label for="passwordL">Password:</label><br>
             <input id="passwordL" class="loginInput" type="password" name="password" minlength="5"><br>
-            <button id="loginBtn" onClick="" type="submit" disabled>Login</button>
+            <button id="loginBtn" disabled>Login</button>
         </form>
+        <div id="message1"></div>
     </div>
     <div>
         <p>Register</p>
-        <form id="registerForm" action="/" method="POST">
+        <form id="registerForm">
             <label for="firstName">First Name:</label><br>
             <input id="firstName" class="registerInput" type="text" name="firstName"><br>
             <label for="lastName">Last Name:</label><br>
@@ -31,8 +32,9 @@
             <input id="usernameR" class="registerInput" type="text" name="username"><br>
             <label for="passwordR">Password</label><br>
             <input id="passwordR" class="registerInput" type="password" name="password" minlength="5"><br>
-            <button id="registerBtn" onClick="" type="submit" disabled>Register</button>
+            <button id="registerBtn" disabled>Register</button>
         </form>
+        <div id="message2"></div>
     </div>
     <script src="script.js"></script>
 </body>
