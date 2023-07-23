@@ -23,7 +23,7 @@ async function registerUser (e) {
     const data = new FormData(formRegister);
     const objData = Object.fromEntries(data);
 
-    const responsePost = await fetch("/registeruser", {
+    const responsePost = await fetch('/registeruser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
