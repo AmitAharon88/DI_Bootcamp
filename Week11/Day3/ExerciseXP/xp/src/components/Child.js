@@ -7,7 +7,9 @@ class Child extends React.Component {
   
     render () {
       if (!this.props.show) {
-        return null;
+        return (
+            <button onClick={this.props.changeShow}>Delete</button>
+        );
       } else{
         return (
           <>
