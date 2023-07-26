@@ -34,6 +34,8 @@ function App() {
           <input name="firstName" placeholder="First Name" onChange={(e)=>handelChange(e)}/><br/>
           <input name="lastName" placeholder="Last Name" onChange={(e)=>handelChange(e)}/><br/>
           <input name="age" placeholder="Age" onChange={(e)=>handelChange(e)}/><br/>
+          <input type="radio" value="Male" name="gender" onChange={(e)=>handelChange(e)}/>Male<br/>
+          <input type="radio" value="Female" name="gender" onChange={(e)=>handelChange(e)}/>Female<br/>
           <label>Select your destination</label><br/>
           <select name="destination" onChange={(e)=> handelChange(e)}>
               <option>Thailand</option>
