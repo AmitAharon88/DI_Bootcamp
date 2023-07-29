@@ -1,0 +1,26 @@
+.topNav {
+    display: flex;	
+    justify-content: space-between;
+    align-items: center; 
+    background-color: red;
+    color: white;
+}
+
+.counter {
+    display: flex;
+}
+
+h3 {
+    margin-right: 10px;
+}
+
+hr {
+    margin: 0;
+}
+
+.subNav {
+    background-image: linear-gradient(to right, red , yellow);
+    margin-top: 0;
+    padding: 5px;
+    color: white
+}
