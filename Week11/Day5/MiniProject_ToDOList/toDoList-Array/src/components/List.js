@@ -16,10 +16,12 @@ const List = () => {
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            // Save the value to the list of todos
             console.log('Value saved:', inputValue);
+            // Save the value to the list of todos
             changeList()
-            setInputValue(''); // Clear the input after saving the value
+            // Clear the input after saving the value
+            setInputValue('');
+            // Clears the input field on the page
             e.target.value = "";
         };
     };
@@ -27,7 +29,6 @@ const List = () => {
     const removeTodo = (index) => {
         // Remove the todo at the specified index
         setTodos((prevList) => prevList.filter((item, i) => i !== index));
-        console.log(todos);
       };
     
     return (
